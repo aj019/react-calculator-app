@@ -4,3 +4,9 @@ export const doOperation = (value) => {
         payload : value
     }
 }
+
+export const getDogs = () => {
+    return{
+        type : 'API_CALL_REQUEST'
+    }
+}

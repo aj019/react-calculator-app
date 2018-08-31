@@ -5,6 +5,7 @@ import Numbers from './components/numbers'
 import Operations from './components/operations'
 import {connect} from 'react-redux';
 import Evaluators from './components/evaluators';
+import DogsComponent from './components/dog-component'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Operations handleClick={this.modifyInput} />
         <br />
         <Evaluators handleClick={this.modifyInput} />
+        <DogsComponent/>
       </React.Fragment>
     );
   }
