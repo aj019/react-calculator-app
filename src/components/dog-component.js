@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {getDogs} from '../actions';
-
+import {createSelector} from 'reselect';
 class DogsComponent extends Component {
     render() {
         const dog = this.props.apiResult.dog;
@@ -36,9 +36,24 @@ class DogsComponent extends Component {
 }
  
 
+const getDog = (state) => state.apiReducer.dog;
+const getFetching = (state) => state.apiReducer.fetching;
+const getError = (state) => state.apiReducer.error;
+
+const getApiResultState = createSelector(
+    [getDog],
+    [getFetching],
+    [getError],
+    (dog,fetching,error) => ({
+        dog,
+        fetching,
+        error
+    })
+)
+
 const mapStateToProps = state => {
     return {
-      apiResult: state.apiReducer,
+      apiResult: getApiResultState(state)
     };
   };
   
