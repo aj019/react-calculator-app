@@ -8,14 +8,16 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import {watcherSaga} from './saga'; 
-
+import {BrowserRouter} from 'react-router-dom';
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(allReducers,applyMiddleware(sagaMiddleware));
 
 ReactDOM.render(
     <Provider store ={store} >    
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>
     , 
     document.getElementById('root'));

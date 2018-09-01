@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {doOperation} from '../actions';
+import {doOperation} from '../../../actions';
 import styled from 'styled-components';
 
 const evaluators = ['clear','delete','='];

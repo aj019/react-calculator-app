@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getDogs} from '../actions';
+import {getDogs} from '../../../actions';
 import {createSelector} from 'reselect';
 class DogsComponent extends Component {
     render() {
@@ -36,9 +36,9 @@ class DogsComponent extends Component {
 }
  
 
-const getDog = (state) => state.apiReducer.dog;
-const getFetching = (state) => state.apiReducer.fetching;
-const getError = (state) => state.apiReducer.error;
+const getDog = (state) => state.apiReducer.get('dog');
+const getFetching = (state) => state.apiReducer.get('fetching');
+const getError = (state) => state.apiReducer.get('error');
 
 const getApiResultState = createSelector(
     [getDog],
