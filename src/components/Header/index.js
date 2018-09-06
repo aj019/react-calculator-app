@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from  'react-router-dom'
+import styled from 'styled-components'
 
+const StyledLI = styled.li`
+    color:white;
+    background-color:black;
+    padding: 14px 20px;
+    display: inline-block;
+    text-decoration:none;
+`;
+
+const StyledLink = styled(Link)`
+    color:white;
+    text-decoration:none;
+`;
 
 const Header = () => (
     <header>
         <nav>
             <ul>
-                <li><Link to='/calculator'>Calculator</Link></li>
-                <li><Link to='/dog'>Dogs</Link></li>
+                <StyledLI><StyledLink to='/calculator'>Calculator</StyledLink></StyledLI>
+                <StyledLI><StyledLink to='/dog'>Dogs</StyledLink></StyledLI>
             </ul>
         </nav>
     </header>
