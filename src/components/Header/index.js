@@ -21,6 +21,8 @@ const Header = () => (
             <ul>
                 <StyledLI><StyledLink to='/calculator'>Calculator</StyledLink></StyledLI>
                 <StyledLI><StyledLink to='/dog'>Dogs</StyledLink></StyledLI>
+                <StyledLI><StyledLink to='/dnd'>Drag And Drop</StyledLink></StyledLI>
+                <StyledLI><StyledLink to='/drag'>Drag Around</StyledLink></StyledLI>
             </ul>
         </nav>
     </header>
